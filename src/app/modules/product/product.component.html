@@ -1,0 +1,14 @@
+  <div class="card mb-4 box-shadow product-item" (click)="viewProductDetail(product.id, product.categoryId)">
+    <img class="card-img-top product-image" data-src="{{product.imageId}}" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text text-truncate">{{product.brand}}</p>
+      <p class="card-text text-truncate">{{product.name}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted">
+          <div *ngIf="product.priceCents != product.effectivePriceCents" class="text-danger price-promotion">{{product.priceCents}} Pontos</div>
+        </div>
+        <strong class="text-muted">{{product.effectivePriceCents}} Pontos</strong>
+      </div>
+    </div>
+  </div>
+
