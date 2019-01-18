@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../../modules/search/search.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DetailService } from './detail.service';
 
 @Component({
   selector: 'app-detail',
@@ -9,25 +9,32 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  searchParam: string;
+  productId: string;
+  categoryId: string;
+  productDetail: object;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private searchService: SearchService
+    private detailService: DetailService,
   ) { }
 
   ngOnInit() {
-    this.searchProducts();
+    this.getQueryParms();
+    this.getProductDetail();
   }
 
-  searchProducts() {
-    // tslint:disable-next-line:no-debugger
-    debugger;
+  getQueryParms() {
     this.route.queryParams.subscribe(params => {
-      this.searchParam = params['search'];
+      this.productId = params['productId'];
+      this.categoryId = params['categoryId'];
     });
-    this.searchService.searchProducts(this.searchParam);
+  }
+
+  getProductDetail() {
+    this.detailService.getProductInformations(this.productId).subscribe((productDetail) => {
+      this.productDetail = productDetail;
+    });
   }
 
 }
