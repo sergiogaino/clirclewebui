@@ -7,14 +7,11 @@ import { SearchStorage } from '../../modules/search/search.storage';
 })
 export class ResultComponent implements OnInit {
 
-
-
   constructor( private searchStorage: SearchStorage ) { }
 
   products = this.searchStorage.products;
 
   ngOnInit() {
-    console.log('aa');
   }
 
 }

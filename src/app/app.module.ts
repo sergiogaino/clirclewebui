@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 // External inports
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule, MatGridListModule} from '@angular/material';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 // Base Components
 import { HeaderComponent } from './base/header/header.component';
@@ -44,6 +45,7 @@ import { LoadComponent } from './pages/load/load.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatGridListModule,
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
