@@ -11,8 +11,4 @@ export class AppComponent {
 
   constructor() {}
 
-  reciveProducts(products) {
-    console.log('Foi emitido o evento e chegou no pai >>>> ', products);
-  }
-
 }

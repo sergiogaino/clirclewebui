@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -8,8 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CarouselComponent implements OnInit {
 
   @Input() products;
-
-  // product = {'aaaaa': 'aaaaaa'};
 
   config: SwiperOptions = {
     autoplay: 0, // Autoplay option having value in milliseconds
@@ -26,5 +24,4 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -23,6 +23,7 @@ import { CarouselComponent } from './modules/carousel/carousel.component';
 import { HeroComponent } from './modules/hero/hero.component';
 import { ProductComponent } from './modules/product/product.component';
 import { LoadComponent } from './pages/load/load.component';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoadComponent } from './pages/load/load.component';
     CarouselComponent,
     HeroComponent,
     ProductComponent,
-    LoadComponent
+    LoadComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

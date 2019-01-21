@@ -1,5 +1,5 @@
 <div class="card mb-4 box-shadow product-item" (click)="viewProductDetail(product.id, product.categoryId)">
-  <img class="card-img-top product-image" data-src="{{product.imageId}}" alt="Card image cap">
+  <img class="card-img-top product-image" data-src="{{product.imageId}}" onerror="this.src='../../assets/sem_foto.png'" alt="Produto">
   <div class="card-body">
     <p class="card-text text-truncate">{{product.brand}}</p>
     <p class="card-text text-truncate">{{product.name}}</p>

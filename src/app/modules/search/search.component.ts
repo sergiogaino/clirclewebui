@@ -25,11 +25,13 @@ export class SearchComponent implements OnInit {
   }
 
   startSearch(searchText: string) {
-    this.router.navigate(['load'], {queryParams: { search: searchText }});
-    this.searchService.searchProducts(searchText).subscribe((products) => {
-      this.searchStorage.products = this.getProducts(products);
-      this.router.navigate(['result'], {queryParams: { search: searchText }});
-    });
+    if (searchText !== '') {
+      this.router.navigate(['load'], {queryParams: { search: searchText }});
+      this.searchService.searchProducts(searchText).subscribe((products) => {
+        this.searchStorage.products = this.getProducts(products);
+        this.router.navigate(['result'], {queryParams: { search: searchText }});
+      });
+    }
   }
 
   getProducts(products) {

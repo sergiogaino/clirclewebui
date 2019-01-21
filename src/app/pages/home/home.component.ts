@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../app.service';
-import { async } from '@angular/core/testing';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   recomendations = [];
   promotions = [];
+
+  showLoadRecomendations = true;
+  showLoadPromotions = true;
 
   constructor(
     private appService: AppService,
@@ -30,6 +32,8 @@ export class HomeComponent implements OnInit {
       this.promotions.push(promotionalProdut);
 
     });
+
+    this.showLoadPromotions = false;
   }
 
   async listRecomendations() {
@@ -43,6 +47,8 @@ export class HomeComponent implements OnInit {
       this.recomendations.push(recomendedProdut);
 
     });
+
+    this.showLoadRecomendations = false;
   }
 
 }
